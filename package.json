@@ -14,7 +14,7 @@
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
-    "cloudinary": "^1.33.0",
+    "cloudinary": "^1.35.0",
     "cookie-parser": "^1.4.6",
     "dot-env": "^0.0.1",
     "dotenv": "^16.0.3",
@@ -23,6 +23,7 @@
     "express-fileupload": "^1.4.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "stjs": "^0.0.5"
   }
 }
