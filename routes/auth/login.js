@@ -30,12 +30,7 @@ router.post("/login", async (req, res) => {
             { expiresIn: "2h" }
           );
 
-          //TODO:old school practice
-          // user.token = token;
-          // user.password = undefined;
-          // res.status(200).json(user);
-
-          //TODO: http-only cookies
+          // http-only cookies
           //Step1: define the config
           const options = {
             expiresIn: Date.now() + 3 * 24 * 60 * 60 * 1000,

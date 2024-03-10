@@ -8,7 +8,7 @@ const User = require("../../models/user");
 
 //Routes
 router.post("/register", async (req, res) => {
-  const { firstname, lastname, email, password } = req.body;
+  const { firstname, lastname, email, password, role } = req.body;
   if (!(firstname && lastname && email && password)) {
     res.status(422).json({ msg: "Please fill the mandatory details" });
   } else {
@@ -24,6 +24,7 @@ router.post("/register", async (req, res) => {
           lastname,
           email,
           password: encryptPassword,
+          role: role || 'user', // Default role to 'user' if not provided
         });
 
         //sign a JWT token and send it back to the client
@@ -35,7 +36,7 @@ router.post("/register", async (req, res) => {
           { expiresIn: "2h" }
         );
 
-        //TODO: Not send password to the client
+        // Do not send password to the client
         user.password = undefined;
         res.status(200).json({ user, token: token });
       }

@@ -19,11 +19,10 @@ app.use(cookies());
 app.use(express.json());
 //using express to upload files
 
-
 //Directory is created only when request is being made. After the request is resolved the temporary file gets removed off
 app.use(
   fileUpload({
-    useTempFiles: "true",
+    useTempFiles: true,
     tempFileDir: "/tmp/",
   })
 );
@@ -31,7 +30,6 @@ app.use(
 //routes
 app.use("/auth", authRoutes);
 app.use("/dashboard", dashboardRoute);
-app.use("/playground", playgroundRoute);
 app.use("/playground", playgroundRoute);
 app.use("/uploads", imageUploadRoute);
 
