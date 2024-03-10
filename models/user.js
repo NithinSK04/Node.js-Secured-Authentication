@@ -15,12 +15,19 @@ const userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    default: null,
     required: true,
+    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
   },
   password: {
     type: String,
-    default: null,
+    required: true,
+    minlength: 4,
+    match: [/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/, 'Password must have at least one uppercase letter, one special character, and be at least 4 characters long'],
+  },
+  role: {
+    type: String,
+    enum: ['admin', 'user'],
+    default: 'user',
     required: true,
   },
   token: {
