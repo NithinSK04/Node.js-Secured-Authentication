@@ -19,6 +19,7 @@ app.use(cookies());
 app.use(express.json());
 //using express to upload files
 
+
 //Directory is created only when request is being made. After the request is resolved the temporary file gets removed off
 app.use(
   fileUpload({

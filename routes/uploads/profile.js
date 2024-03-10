@@ -11,7 +11,6 @@ cloudinary.config({
 });
 
 router.post("/profile", async (req, res) => {
-  console.log(req.files);
   try {
     const cloudinary = await cloudinary.uploader.upload(
       req.files.profile_picture.tempFilePath,
